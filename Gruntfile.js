@@ -64,6 +64,7 @@ module.exports = function(grunt) {
                 'build/css',
                 'build/img',
                 'build/js',
+                'build/assets',
                 'build/js/umd',
                 'build/*.html',
                 'build/*.ico'
@@ -294,6 +295,10 @@ module.exports = function(grunt) {
         'style',
         'img',
         'includereplace:html'
+    ]);
+
+    grunt.registerTask('clear', [
+        'clean:build'
     ]);
 
     grunt.registerTask('style', [
