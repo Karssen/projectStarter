@@ -1,0 +1,466 @@
+@import '../variables.less'; // Можно удалять, это только для удобства написания кода.
+
+
+
+//------------------------------------------------------------------------------
+//  Общие стили форм
+//------------------------------------------------------------------------------
+
+/*
+<form action="">
+  <!-- Раскомментировать стилизацию для использования с классами модульной сетки -->
+  <div class="field  row">
+    <label class="field__label  col-xs-3" for="id">Название</label>
+    <div class="col-xs-9">
+      <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+      <div class="field__description">Описание</div>
+    </div>
+  </div>
+  <label class="field">
+    <div class="field__label">Название</div>
+    <input type="text" class="field__input-text" placeholder="Подсказка">
+    <div class="field__description">Описание</div>
+  </label>
+  <div class="field">
+    <label class="field__label" for="id">Название</label>
+    <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+    <div class="field__description">Описание</div>
+  </div>
+  <div class="field">
+    <label class="field__label" for="id">Название</label>
+    <!-- Раскомментировать стилизацию для блоков рядом с текстовым полем -->
+    <div class="field__internal-group">
+      <span class="field__addon">$</span>
+      <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+      <span class="field__addon">.00</span>
+    </div>
+    <div class="field__description">Описание текстового поля</div>
+  </div>
+  <div class="field">
+    <label class="field__label" for="ex1">Название</label>
+    <select class="field__select" id="ex1">
+        <option>1</option>
+        <option>2</option>
+      </select>
+    <div class="field__description">Описание</div>
+  </div>
+  <div class="field">
+    <label class="field__label" for="ex1">Название</label>
+    <textarea class="field__textarea" cols="30" rows="4"></textarea>
+    <div class="field__description">Описание</div>
+  </div>
+  <div class="field">
+    <label class="field__label" for="id2">Название</label>
+    <input type="file" id="id2" class="field__file">
+    <div class="field__description">Описание</div>
+    <span class="field__file-pad"></span>
+  </div>
+  <div class="field  field--radio">
+    <label>
+      <input type="radio">
+      <div class="field__label">Название</div>
+    </label>
+  </div>
+  <label class="field  field--radio">
+    <input type="radio">
+    <div class="field__label">Название</div>
+  </label>
+  <div class="field  field--checkbox">
+    <label>
+      <input type="checkbox">
+      <div class="field__label">Название</div>
+    </label>
+  </div>
+  <div class="field  field--checkbox">
+    <label>
+      <input type="checkbox">
+      <div class="field__label">Название</div>
+    </label>
+  </div>
+</form>
+*/
+
+label {
+  display: inline-block;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  line-height: inherit;
+  border-radius: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+ fieldset {
+   min-width: 0;
+   margin: 0;
+   padding: @spacer;
+   border: 1px solid @color__gray-light;
+ }
+
+ legend {
+   display: block;
+   width: 100%;
+   padding: 0;
+   margin-bottom: @headings__margin-bottom;
+   font-size: @font-size--h3;
+   line-height: @headings__line-height;
+ }
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+
+
+
+
+//------------------------------------------------------------------------------
+//  БЭМ-блок поля формы
+//------------------------------------------------------------------------------
+
+.field {
+  margin-bottom: @type-spacer;
+  width: 100%;
+
+  // Использование с классами модульной сетки
+  &:not(.row) {
+    display: block;
+  }
+  &.row{
+    margin-left:0;
+    margin-right:0;
+
+    //Убирает паддинги у col
+    //& > [class*=col]{
+    //  padding-right:0;
+    //  padding-left:0;
+    //}
+  }
+  // Название поля
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 1rem;
+
+    // Использование с классами модульной сетки
+     .row > & {
+       margin-bottom: 0;
+       height: @field-height;
+       line-height: @field-height;
+     }
+  }
+
+  // Текстовые поля и селект (общие свойства)
+  &__input-text,
+  &__select,
+  &__textarea {
+    display: block;
+    width: 100%;
+    padding: @field-padding;
+    font-size: @font-size;
+    line-height: @field-line-height;
+    color: @text-color;
+    background-image: none;
+    background-color: #fff;
+    border: @field-border;
+    border-radius: @border-radius;
+
+    &::placeholder {
+      color: @color__gray-light;
+      opacity: 1;
+    }
+
+    &:focus {
+      .focus();
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: @color__gray-lightest;
+      opacity: 1;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: @opacity;
+    }
+  }
+
+  // Текстовые поля и селект (фиксируем высоту тем, кому нужно)
+  &__input-text {
+    height: @field-height;
+  }
+  &__select {
+    &:not([size]),
+    &:not([multiple]) {
+      height: @field-height;
+    }
+  }
+
+  // Селект
+  &__select {
+    appearance: none;
+    background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/chevron-down.svg');
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: top .7rem right .6rem;
+    padding-right: 2.5rem;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  // Файл
+  &__file {
+    display: block;
+    width: 100%;
+
+    &:focus {
+      .focus();
+    }
+  }
+
+  // Файл: накладка для стилизации
+  &__file-pad {
+
+  }
+
+  // Описание под полем
+  &__description {
+    display: block;
+    font-size: @font-size--small;
+    color: @color__gray-light;
+    margin: 0;
+    padding: .5rem 0 0;
+  }
+
+  // Блоки рядом с текстовым полем
+   &__internal-group {
+     display: flex;
+
+     .field__input-text {
+       position: relative;
+       z-index: 1;
+
+       &:not(:first-child) {
+         border-top-left-radius: 0;
+         border-bottom-left-radius: 0;
+       }
+       &:not(:last-child) {
+         border-top-right-radius: 0;
+         border-bottom-right-radius: 0;
+       }
+     }
+   }
+   &__addon {
+     height: @field-height;
+     line-height: @field-line-height;
+     padding: @field-padding;
+     background-color: @color__gray-lightest;
+     border-top: @field-border;
+     border-bottom: @field-border;
+     border-radius: @border-radius;
+
+     &:first-child {
+       border-left: @field-border;
+       border-top-right-radius: 0;
+       border-bottom-right-radius: 0;
+     }
+     &:last-child {
+       border-right: @field-border;
+       border-top-left-radius: 0;
+       border-bottom-left-radius: 0;
+     }
+   }
+
+
+
+  // Модификатор для радиокнопок
+  &--radio {
+
+    & + & {
+      margin-top: (@type-spacer * -.5);
+    }
+    input {
+      vertical-align: middle;
+    }
+    .field__label {
+      margin-bottom: 0;
+    }
+  }
+
+  // Модификатор для чекбоксов
+  &--checkbox {
+    position: relative;
+
+    & + & {
+      margin-top: (@type-spacer * -.5);
+    }
+    input {
+      vertical-align: middle;
+    }
+    .field__label {
+      margin-bottom: 0;
+    }
+  }
+
+  // Модификатор для радиокнопок (дополнение): своя радиокнопка
+   &--radio {
+     position: relative;
+
+     input {
+       position: absolute;
+       z-index: -1;
+       opacity: 0;
+
+       &:checked + .field__label:before {
+         background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/radiobutton--checked.svg');
+       }
+       &:checked:focus + .field__label:before {
+         .focus();
+       }
+     }
+     .field__label {
+       &:before {
+         content: '';
+         display: inline-block;
+         vertical-align: -.15em;
+         width: 1em;
+         height: 1em;
+         margin-right: .4em;
+         background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/radiobutton.svg');
+         background-size: 1em 1em;
+         background-repeat: no-repeat;
+         background-position: center;
+         border-radius: 50%;
+       }
+     }
+   }
+
+  // Модификатор для чекбоксов (дополнение): своя чекбокс
+   &--checkbox {
+     position: relative;
+
+     input {
+       position: absolute;
+       z-index: -1;
+       opacity: 0;
+
+       &:checked + .field__label:before {
+         background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/checkbox--checked.svg');
+       }
+       &:checked:focus + .field__label:before {
+         .focus();
+       }
+     }
+     .field__label {
+       &:before {
+         content: '';
+         display: inline-block;
+         vertical-align: -.15em;
+         width: 1em;
+         height: 1em;
+         margin-right: .4em;
+         background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/checkbox.svg');
+         background-size: 1em 1em;
+         background-repeat: no-repeat;
+         background-position: center;
+       }
+     }
+   }
+
+  // Модификаторы состояния УСПЕХ
+   &--success {
+    .field__label {
+       color: @color__success;
+     }
+     .field__input-text,
+     .field__textarea {
+       background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/check.svg');
+       background-size: 1.5rem 1.5rem;
+       background-repeat: no-repeat;
+       background-position: top .7rem right .6rem;
+       padding-right: 2.5rem;
+       border-color: @color__success;
+
+       &:focus {
+         .focus(success);
+       }
+     }
+     .field__select {
+       border-color: @color__success;
+       background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/chevron-down--success.svg');
+
+       &:focus {
+         .focus(success);
+       }
+     }
+   }
+
+   //Модификаторы состояния ОШИБКА
+   &--error {
+     .field__label {
+       color: @color__danger;
+     }
+     .field__input-text,
+     .field__textarea {
+       background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/close.svg');
+       background-size: 1.5rem 1.5rem;
+       background-repeat: no-repeat;
+       background-position: top .7rem right .6rem;
+       padding-right: 2.5rem;
+       border-color: @color__danger;
+
+       &:focus {
+         .focus(error);
+       }
+     }
+     .field__select {
+       border-color: @color__danger;
+       background-image: data-uri('image/svg+xml;charset=UTF-8', '../../img/icons_form/chevron-down--error.svg');
+
+       &:focus {
+         .focus(error);
+       }
+     }
+   }
+
+}
+
+
+
+
+
+//------------------------------------------------------------------------------
+//  Форма в одну строку
+//------------------------------------------------------------------------------
+
+ .form-inline {
+
+   .field {
+     display: inline-block;
+     width: auto;
+     vertical-align: top;
+     margin-bottom: @type-spacer;
+     margin-right: @type-spacer;
+   }
+
+   .field__label {
+     margin-bottom: 0;
+     height: @field-height;
+     line-height: @field-height;
+   }
+
+   .field__select, .field__input-text {
+     display: inline-block;
+     width: auto;
+   }
+ }

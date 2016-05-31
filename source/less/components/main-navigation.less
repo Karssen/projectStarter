@@ -1,0 +1,92 @@
+@import '../variables.less'; // Можно удалять, это только для удобства написания кода.
+
+//------------------------------------------------------------------------------
+//  Компонент главного меню
+//------------------------------------------------------------------------------
+
+/*
+        <nav class="main-navigation">
+            <ul class="main-navigation__list">
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Пункт меню 1</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Пункт меню 2</a></li>
+                <li class="main-navigation__item dropdown-item">
+                    <a class="main-navigation__link" href="#">Пункт меню 3
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">1</a></li>
+                        <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">2</a></li>
+                        <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">3</a></li>
+                    </ul>
+                </li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Пункт меню 4</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Пункт меню 5</a></li>
+            </ul>
+        </nav>
+*/
+
+.main-navigation{
+  width:100%;
+
+  &__list{
+    .nav-list();
+    flex-wrap: wrap;
+  }
+
+  &__item{
+    flex-grow:1;
+    margin-right: @spacer/2;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+
+  &__link{
+    .nav-link();
+    .link-color-variant(#fff; @color__primary; transparent);
+  }
+
+}
+
+
+.dropdown-item{
+  position:relative;
+
+  &  .caret{
+    .caret();
+  }
+
+}
+
+.dropdown-menu {
+  .nav-list();
+  .drop-menu();
+
+  &.open{
+    display:flex;
+  }
+
+  &--right{
+    left:100%;
+    top:-@spacer/2;
+  }
+
+  &__item {
+    margin: 0 0 @spacer/2 0;
+  }
+
+  &__item:last-child {
+    margin: 0;
+  }
+
+  &__item:first-child {
+    margin: @spacer/2 0 @spacer/2 0;
+  }
+
+  &__link{
+    .nav-link();
+    .link-color-variant(#fff; lighten(@color__primary,20%); transparent);
+  }
+}

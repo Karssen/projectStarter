@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Заголовок</title>
+    <meta name="description" content="">
+
+    @@include('_html_inc/page_head.html')
+
+</head>
+
+
+
+<body>
+
+<!--@@include('img/sprite.svg')-->
+<h1>Заголовок h1</h1>
+<h2>Заголовок h2</h2>
+<h3>Заголовок h3</h3>
+<h4>Заголовок h4</h4>
+<h5>Заголовок h5</h5>
+<h6>Заголовок h6</h6>
+
+<h2>Header</h2>
+@@include('_html_inc/page_header.html')
+
+<h2>Container-fluid</h2>
+<div class="container-fluid">
+    <p>Параграф. Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек, открывший истину, которого я бы назвал зодчим счастливой жизни71. Действительно, никто не отвергает, не презирает, не избегает наслаждений только из-за того, что это наслаждения, но лишь из-за того, что тех, кто не умеет разумно предаваться наслаждениям, постигают великие страдания. Равно как нет никого, кто возлюбил бы, предпочел и возжаждал бы само страдание только за то, что это страдание, а не потому, что иной раз возникают такие обстоятельства, когда страдания и боль приносят некое и немалое наслаждение. Если воспользоваться простейшим примером, то кто из нас стал бы заниматься какими бы то ни было тягостными физическими упражнениями, если бы это не приносило с собой некоей пользы? И кто мог бы по справедливости упрекнуть стремящегося к наслаждению, которое не несло бы с собой никаких неприятностей, или того, кто избегал бы такого страдания, которое не приносило бы с собой никакого наслаждения?</p>
+</div>
+
+<h2>Content в классе container</h2>
+    <div class="container">
+        <h3>Пример главного меню</h3>
+
+        <nav class="main-navigation">
+            <ul class="main-navigation__list">
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Пункт меню 1</a></li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Пункт меню 2</a></li>
+                <li class="main-navigation__item dropdown-item">
+                    <a class="main-navigation__link" data-toggle="dropdown" href="#">Пункт меню 3
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">1</a></li>
+                        <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">2</a></li>
+                        <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">3</a></li>
+                    </ul>
+                </li>
+                <li class="main-navigation__item"><a class="main-navigation__link" href="#">Пункт меню 4</a></li>
+                <li class="main-navigation__item dropdown-item">
+                    <a class="main-navigation__link" data-toggle="dropdown" href="#">Пункт меню 5
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">1</a></li>
+                        <li class="dropdown-menu__item dropdown-item">
+                        <a class="main-navigation__link" data-toggle="dropdown" href="#">Пункт меню 3
+                            <span class="caret"></span>
+                        </a>
+                            <ul class="dropdown-menu dropdown-menu--right">
+                                <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">1</a></li>
+                                <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">2</a></li>
+                                <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">3</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-menu__item"><a class="dropdown-menu__link" href="#">3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+        <h3>Пример формы</h3>
+
+        <form action="">
+            <!-- Раскомментировать стилизацию для использования с классами модульной сетки -->
+
+            <div class="field  row">
+                <label class="field__label  col-xs-3" for="id">Название</label>
+                <div class="col-xs-9">
+                    <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+                    <div class="field__description">Описание</div>
+                </div>
+            </div>
+            <div class="field  row">
+                <div class="field__internal-group col-xs-6">
+                    <span class="field__addon">$</span>
+                    <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+                    <span class="field__addon">.00</span>
+                </div>
+                <div class="col-xs-6">
+                    <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+                    <div class="field__description">Описание</div>
+                </div>
+            </div>
+            <label class="field">
+                <div class="field__label">Название</div>
+                <input type="text" class="field__input-text" placeholder="Подсказка">
+                <div class="field__description">Описание</div>
+            </label>
+            <div class="field">
+                <label class="field__label" for="id">Название</label>
+                <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+                <div class="field__description">Описание</div>
+            </div>
+            <div class="field">
+                <label class="field__label" for="id">Название</label>
+                <!-- Раскомментировать стилизацию для блоков рядом с текстовым полем -->
+                <div class="field__internal-group">
+                    <span class="field__addon">$</span>
+                    <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+                    <span class="field__addon">.00</span>
+                </div>
+                <div class="field__description">Описание текстового поля</div>
+            </div>
+            <div class="field field__internal-group">
+                <label class="field__label" for="ex1">Название</label>
+                <select class="field__select" id="ex1">
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+                <div class="field__description">Описание</div>
+            </div>
+            <div class="field">
+                <label class="field__label" for="ex1">Название</label>
+                <textarea class="field__textarea" cols="30" rows="4"></textarea>
+                <div class="field__description">Описание</div>
+            </div>
+            <div class="field">
+                <label class="field__label" for="id2">Название</label>
+                <input type="file" id="id2" class="field__file">
+                <div class="field__description">Описание</div>
+                <span class="field__file-pad"></span>
+            </div>
+            <div class="field  field--radio">
+                <label>
+                    <input type="radio" name="name" value="val1">
+                    <div class="field__label">Название</div>
+                </label>
+                <label>
+                    <input type="radio" name="name" value="val2">
+                    <div class="field__label">Название</div>
+                </label>
+            </div>
+            <label class="field  field--radio">
+                <input type="radio">
+                <div class="field__label">Название</div>
+            </label>
+            <div class="field  field--checkbox">
+                <label>
+                    <input type="checkbox">
+                    <div class="field__label">Название</div>
+                </label>
+            </div>
+            <div class="field  field--checkbox">
+                <label>
+                    <input type="checkbox">
+                    <div class="field__label">Название</div>
+                </label>
+            </div>
+        </form>
+
+    <h3>Пример inline формы</h3>
+    <form action="" class="form-inline">
+        <label class="field">
+            <div class="field__label">Название текстового поля</div>
+            <input type="text" class="field__input-text" placeholder="пиши тут">
+        </label>
+        <div class="field">
+            <label class="field__label" for="id">Название</label>
+            <input type="text" id="id" class="field__input-text" placeholder="пиши тут">
+        </div>
+        <div class="field">
+            <label class="field__label" for="ex1">Название</label>
+            <select class="field__select" id="ex1">
+                <option>1</option>
+                <option>2</option>
+            </select>
+        </div>
+        <div class="field  field--checkbox">
+            <label>
+                <input type="checkbox">
+                <div class="field__label">Название</div>
+            </label>
+        </div>
+        <div class="field">
+            <input class="btn" type="reset" value="Отправь меня">
+        </div>
+    </form>
+
+
+    <div class="row">
+
+        <div class="col-xs-6">
+            <h3>Кнопки</h3>
+            <a href="" class="btn-success  btn--block btn--disabled">кнопка</a>
+            <button class="btn btn-danger  btn--lg">button</button>
+            <input class="btn" type="reset" value="input" disabled>
+
+            <p class="btn-group">
+                <a href="" class="btn  btn--block">кнопка</a>
+                <button class="btn-danger  btn-danger--lg">button</button>
+                <input class="btn" type="reset" value="input" disabled>
+            </p>
+            <h3>Форма с классами ошибки</h3>
+            <form action="">
+
+                <label class="field  field--error">
+                    <div class="field__label">Название текстового поля</div>
+                    <input type="text" class="field__input-text" placeholder="пиши тут">
+                    <div class="field__description">Описание текстового поля</div>
+                </label>
+
+                <div class="field  field--error">
+                    <label class="field__label" for="id">Название</label>
+                    <div class="field__internal-group">
+                        <span class="field__addon">$</span>
+                        <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+                        <span class="field__addon">.00</span>
+                    </div>
+                    <div class="field__description">Описание текстового поля</div>
+                </div>
+
+                <div class="field  row">
+                    <label class="field__label  col-xs-3" for="id">Название</label>
+                    <div class="col-xs-9">
+                        <input type="text" id="id" class="field__input-text" placeholder="Подсказка">
+                        <div class="field__description">Описание</div>
+                    </div>
+                </div>
+
+                <div class="field  field--error">
+                    <label class="field__label" for="ex1">Название</label>
+                    <select class="field__select" id="ex1">
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                    <div class="field__description">Описание поля</div>
+                </div>
+
+                <div class="field  field--error">
+                    <label class="field__label" for="ex1">Название</label>
+                    <textarea class="field__textarea" cols="30" rows="4"></textarea>
+                    <div class="field__description">Описание поля</div>
+                </div>
+
+                <div class="field">
+                    <label class="field__label" for="id2">Название</label>
+                    <span class="field__file-pad"></span>
+                    <input type="file" id="id2" class="field__file">
+                    <div class="field__description">Описание</div>
+                </div>
+
+                <div class="field  field--radio  field--error">
+                    <label>
+                        <input type="radio">
+                        <div class="field__label">Название</div>
+                    </label>
+                </div>
+
+                <label class="field  field--radio  field--error">
+                    <input type="radio">
+                    <div class="field__label">Название</div>
+                </label>
+
+                <div class="field  field--checkbox  field--error">
+                    <label>
+                        <input type="checkbox">
+                        <div class="field__label">Название</div>
+                    </label>
+                </div>
+
+                <div class="field  field--checkbox  field--error">
+                    <label>
+                        <input type="checkbox">
+                        <div class="field__label">Название</div>
+                    </label>
+                </div>
+
+            </form>
+            <h3>Медиа с помощью ul</h3>
+            <ul class="media-list">
+                <li class="media">
+                    <div class="media__image">
+                        <a href=""><img src="http://placehold.it/70x70" alt=""></a>
+                    </div>
+                    <div class="media__body">
+                        <h1 class="media__heading">Какое-то название медиа-объекта или медиа-объедка</h1>
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу.
+                    </div>
+                </li>
+                <li class="media">
+                    <div class="media__image  media__image--middle">
+                        <a href=""><img src="http://placehold.it/70x70" alt=""></a>
+                    </div>
+                    <div class="media__body">
+                        <h1 class="media__heading">Какое-то название медиа-объекта или медиа-объедка</h1>
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу.
+
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="media__image">
+                                    <a href=""><img src="http://placehold.it/70x70" alt=""></a>
+                                </div>
+                                <div class="media__body">
+                                    <h1 class="media__heading">Какое-то название медиа-объекта или медиа-объедка</h1>
+                                    Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу.
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media__image  media__image--middle">
+                                    <a href=""><img src="http://placehold.it/70x70" alt=""></a>
+                                </div>
+                                <div class="media__body">
+                                    <h1 class="media__heading">Какое-то название медиа-объекта или медиа-объедка</h1>
+                                    Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу.
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-6">
+            <h3>Медиа с помощью article</h3>
+            <article class="media">
+                <div class="media__image">
+                    <a href=""><img src="http://placehold.it/70x70" alt=""></a>
+                </div>
+                <div class="media__body">
+                    <h1 class="media__heading">Какое-то </h1>
+                    Далеко-далеко за словесными.
+
+                    <article class="media">
+                        <div class="media__image">
+                            <a href=""><img src="http://placehold.it/70x70" alt=""></a>
+                        </div>
+                        <div class="media__body">
+                            <h1 class="media__heading">Какое-то название медиа-объекта или медиа-объедка</h1>
+                            Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу.
+                        </div>
+                    </article>
+
+                </div>
+            </article>
+            <article class="media">
+                <div class="media__image">
+                    <a href=""><img src="http://placehold.it/70x70" alt=""></a>
+                </div>
+                <div class="media__body">
+                    <h1 class="media__heading">Какое-то название медиа-объекта или медиа-объедка</h1>
+                    Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу.
+
+                    <article class="media">
+                        <div class="media__image">
+                            <a href=""><img src="http://placehold.it/70x70" alt=""></a>
+                        </div>
+                        <div class="media__body">
+                            <h1 class="media__heading">Какое-то название медиа-объекта или медиа-объедка</h1>
+                            Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой родного, домах своего дорогу.
+                        </div>
+                    </article>
+
+                </div>
+            </article>
+
+
+
+
+        </div>
+    </div>
+        <h3>Гибкая таблица</h3>
+    <div class="table-responsive">
+        <table class="">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td data-label="First Name">Mark Usa</td>
+                <td data-label="Last Name">Ottomann</td>
+            </tr>
+            <tr class="row-error">
+                <td data-label="First Name">Jacob Bi</td>
+                <td data-label="Last Name">ThorntonIIThorntonIIThorntonIIThorntonIIThorntonIIThornton IIThornton IIThornton IIThornton IIThornton IIThornton IIThornton IIThornton IIThornton IIThornton II</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <h3>Тег figure</h3>
+    <figure>
+        <img src="http://placehold.it/350x150" alt="">
+        <figcaption>A caption for the above image.</figcaption>
+    </figure>
+
+</div>
+
+<!--
+<svg width="32" height="32">
+  <use xlink:href="#icon_github" />
+</svg>
+-->
+
+
+
+
+@@include('_html_inc/page_footer.html')
+
+@@include('_html_inc/page_bottom.html')
+
+</body>
+</html>

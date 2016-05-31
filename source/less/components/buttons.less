@@ -1,0 +1,92 @@
+@import '../variables.less'; // Можно удалять, это только для удобства написания кода.
+
+
+
+//------------------------------------------------------------------------------
+//  Кнопка
+//------------------------------------------------------------------------------
+
+.btn {
+  .btn();
+  .btn-color-variant(@text-color; @color__gray-lighter; transparent);
+
+   &--lg {
+     font-size: @font-size--large;
+     padding: 1rem 2rem;
+   }
+
+   &--sm {
+     font-size: @font-size--small;
+     padding: .1rem .5rem;
+   }
+
+   &--block {
+     display: block;
+     width: 100%;
+   }
+}
+
+
+
+//------------------------------------------------------------------------------
+//  Кнопки
+//------------------------------------------------------------------------------
+
+// // ВНИМАНИЕ! Это самостоятельный блок, не модификатор.
+ .btn-primary {
+   .btn();
+   .btn-color-variant(#fff; @color__primary; transparent);
+ }
+
+ // ВНИМАНИЕ! Это самостоятельный блок, не модификатор.
+ .btn-success {
+   .btn();
+   .btn-color-variant(#fff; @color__success; transparent);
+ }
+
+// // ВНИМАНИЕ! Это самостоятельный блок, не модификатор.
+ .btn-info {
+   .btn();
+   .btn-color-variant(#fff; @color__info; transparent);
+ }
+
+// // ВНИМАНИЕ! Это самостоятельный блок, не модификатор.
+ .btn-warning {
+   .btn();
+   .btn-color-variant(#fff; @color__warning; transparent);
+ }
+
+// // ВНИМАНИЕ! Это самостоятельный блок, не модификатор.
+ .btn-danger {
+   .btn();
+   .btn-color-variant(#fff; @color__danger; transparent);
+ }
+
+
+
+//------------------------------------------------------------------------------
+//  Группы кнопок
+//------------------------------------------------------------------------------
+
+ .btn-group {
+   display: inline-flex;
+
+   & when (@border-radius > 0) {
+
+     .btn {
+       &:first-child {
+         border-top-right-radius: 0;
+         border-bottom-right-radius: 0;
+       }
+
+       &:last-child {
+         border-top-left-radius: 0;
+         border-bottom-left-radius: 0;
+       }
+
+       &:not(:first-child):not(:last-child) {
+         border-radius: 0;
+       }
+     }
+   }
+ }

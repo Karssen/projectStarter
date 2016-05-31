@@ -1,0 +1,100 @@
+@import '../variables.less'; // ћожно удал€ть, это только дл€ удобства написани€ кода.
+
+.nav-list(){
+  list-style: none;
+  display:flex;
+  padding:0;
+  background-color:@color__gray-lighter;
+}
+
+.nav-link() {
+  display:block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 400;
+  padding: @btn-padding;
+  font-size: @font-size;
+  line-height: @btn-line-height;
+  border: 1px solid;
+
+  // border: 1px solid transparent;
+  //background-color: @color__gray-lighter;
+  //color: @text-color;
+
+  & when (@border-radius > 0) {
+    border-radius: @border-radius;
+  }
+
+  // &--hover,
+  &:hover {
+    text-decoration: none;
+    // color: @text-color;
+    // background-color: darken(@color__gray-lighter, 10%);
+    // border-color: transparent;
+  }
+
+  // &--active,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    // color: @text-color;
+    // background-color: darken(@color__gray-lighter, 15%);
+    // border-color: transparent;
+  }
+
+  &:focus {
+    .focus();
+  }
+
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: @opacity;
+
+    a& {
+      pointer-events: none;
+    }
+  }
+}
+
+.link-color-variant(@color: @text-color; @background: @color__gray-lighter; @border: @color__gray-lighter) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &--hover,
+  &:hover {
+    color: @color;
+    background-color: darken(@background, 10%);
+    border-color: darken(@border, 12%);
+  }
+
+  &--active,
+  &:active,
+  &:focus {
+    color: @color;
+    background-color: darken(@background, 15%);
+    border-color: darken(@border, 17%);
+  }
+
+  &--disabled,
+  &:disabled {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+  }
+}
+.drop-menu(){
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  display:none;
+  -webkit-transition: height 0.4s ease;
+  -moz-transition: height 0.4s ease;
+  -ms-transition: height 0.4s ease;
+  -o-transition: height 0.4s ease;
+  transition: height 0.4s ease;
+}
