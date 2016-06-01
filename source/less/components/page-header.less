@@ -1,0 +1,63 @@
+@import '../variables.less';
+
+#page-header{
+  background-image: url("../../img/background/main-bg3.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color:#fff;
+  height: 100vh;
+  position: relative;
+}
+
+.intro{
+
+  &__header{
+    display:flex;
+    position:relative;
+    justify-content: center;
+    align-items: center;
+    min-height:100px;
+  }
+  &__logo{
+    position:absolute;
+    top:25px;
+    left:0;
+    border-radius: 50%;
+    width:50px;
+    height:50px;
+    border:1px solid #fff;
+
+    &-img{}
+  }
+  &__slogan{}
+}
+
+
+.person{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+
+  &__outer{
+    display: table;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    &-row{
+      display: table-row;
+    }
+    &-cell{
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+}
