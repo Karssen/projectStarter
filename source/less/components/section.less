@@ -1,0 +1,31 @@
+@import '../variables.less';
+
+.section{
+  min-height:100vh;
+  background-color: rgba(26, 226, 255, 0.22);
+
+  &__header{
+    text-transform: uppercase;
+    text-align: center;
+    padding:@spacer * 5 @spacer * 2;
+    margin-bottom: @spacer * 3;
+
+    h2{
+      margin: @spacer * 4 0;
+    }
+    & p{
+      display:inline-block;
+      position:relative;
+    }
+    & p:after{
+      content:'';
+      width: 80%;
+      position:absolute;
+      height:2px;
+      background-color: #000;
+      top:60px;
+      left:10%;
+      right:10%;
+    }
+  }
+}

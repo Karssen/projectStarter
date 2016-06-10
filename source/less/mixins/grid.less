@@ -36,16 +36,16 @@
       width: @container-lg;
     }
   }
-  & when not (@container-xl = 100%) {
-    @media (min-width: @screen-xl) {
-      width: @container-xl;
-    }
-  }
-  & when not (@container-xxl = 100%) {
-    @media (min-width: @screen-xxl) {
-      width: @container-xxl;
-    }
-  }
+  //& when not (@container-xl = 100%) {
+  //  @media (min-width: @screen-xl) {
+  //    width: @container-xl;
+  //  }
+  //}
+  //& when not (@container-xxl = 100%) {
+   // @media (min-width: @screen-xxl) {
+   //   width: @container-xxl;
+   // }
+  //}
 }
 
 
@@ -139,16 +139,16 @@
       .make-col(@column, @columns, @gutter);
     }
   }
-  & when (@screen = xl) {
-    @media (min-width: @screen-xl) {
-      .make-col(@column, @columns, @gutter);
-    }
-  }
-  & when (@screen = xxl) {
-    @media (min-width: @screen-xxl) {
-      .make-col(@column, @columns, @gutter);
-    }
-  }
+  //& when (@screen = xl) {
+   // @media (min-width: @screen-xl) {
+   //   .make-col(@column, @columns, @gutter);
+   // }
+  //}
+  //& when (@screen = xxl) {
+   // @media (min-width: @screen-xxl) {
+   //   .make-col(@column, @columns, @gutter);
+   // }
+  //}
 }
 
 

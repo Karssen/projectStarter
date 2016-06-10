@@ -217,7 +217,7 @@ module.exports = function(grunt) {
             }
         },
 
-        webpack: {
+        /*webpack: {
             main: {
                 // webpack options
                 context: __dirname + '/source', // будет по умолчанию искать все в source
@@ -275,7 +275,7 @@ module.exports = function(grunt) {
                     ]
                 }
             }
-        }
+        }*/
 
 
 
@@ -285,7 +285,7 @@ module.exports = function(grunt) {
         'style',
         'img',
         'includereplace:html',
-        'webpack',
+        //'webpack',
         'browserSync',
         'watch'
     ]);

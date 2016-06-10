@@ -17,6 +17,7 @@
 <body>
 
 <header id="page-header">
+    <div class="page-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -37,15 +38,177 @@
             <div class="person__outer-row">
                 <div class="person__outer-cell">
                     <div class="person">
-                        <h1 class="person__name">Артем Зубанов</h1>
-                        <p class="person__skills">WEB-РАЗРАБОТЧИК / HTML-ВЕРСТАЛЬЩИК</p>
-                        <p class="person__skills">ПРОГРАММИСТ JAVASCRIPT</p>
+                        <div class="person__inner">
+                            <h1 class="person__name">Артем Зубанов</h1>
+                            <p class="person__skills">WEB-РАЗРАБОТЧИК / HTML-ВЕРСТАЛЬЩИК</p>
+                            <p class="person__skills">ПРОГРАММИСТ JAVASCRIPT</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="menu">
+        <input type="checkbox" name="menu-button" id="menu-button"/>
+        <div class="page-start">
+            <a href="#page-header" class="page-start__link">
+                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="menu__toggle">
+            <label class="sandwich" for="menu-button">
+                <span class="sandwich__top"></span>
+                <span class="sandwich__middle"></span>
+                <span class="sandwich__bottom"></span>
+            </label>
+        </div>
+        <nav class="menu__nav">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="#about" class="menu__link">Обо мне</a></li>
+                <li class="menu__item"><a href="#summary" class="menu__link">Резюме</a></li>
+                <li class="menu__item"><a href="" class="menu__link">Портфолио</a></li>
+                <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
+<section id="about" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <header class="section__header">
+                    <h2>Обо мне</h2>
+                    <p>Познакомимся поближе</p>
+                </header> 
+            </div>
+
+            <div class="col-xs-12">
+                <div class="info">
+                    <div class="info__item">
+                        <h3 class="info__header">
+                            Немного о себе
+                        </h3>
+                        <p class="info__text">
+                            Доброго времени суток, меня зовут Артем.
+                            Занимаюсь разработкой сайтов с нуля, под ключ.
+                            Специалист по CMS WordPress, Joomla.
+                            Выполняю верстку и программирование сайтов.
+                            Добавляю весь необходимый функционал на сайт.
+                            Делаю адаптивную верстку на Bootstrap, таким образом
+                            Ваш сайт будет отлично выглядеть на всех устройствах.
+                            Любой начатый проект довожу до конца, постоянно совершенствую
+                            свой профессиональный уровень. Вы можете заказать у меня
+                            разработку сайта с нуля, или связаться со мной для сотрудничества.
+                        </p>
+                    </div>
+                    <div class="info__item">
+                        <h3 class="info__header">
+                            Фото
+                        </h3>
+                        <div class="info__picture">
+                            <img src="img/about/me.jpg" alt="I am" class="info__img"/>
+                        </div>
+                    </div>
+                    <div class="info__item">
+                        <h3 class="info__header">
+                            Персональная информация
+                        </h3>
+                        <div class="info__personal">
+                            <h3 class="info__name">
+                                Артем Зубанов
+                            </h3>
+                            <p class="info__text">
+                                Профессиональное создание сайтов:
+                                разработка дизайна, HTML верстка,
+                                посадка на CMS WordPress, Joomla,
+                                программирование на PHP, JavaScript
+                            </p>
+                            <p class="info__text">
+                                День рождения: 17 января 1990 года
+                            </p>
+                            <p class="info__text">
+                                Skype: dexte92
+                            </p>
+                            <p class="info__text">
+                                E-mail: <a href="mailto:masterdirectx@mail.ru">masterdirectx@mail.ru</a>
+                            </p>
+                            <p class="info__text">
+                                Веб-сайт: <a href="skalexander.ru">skalexander.ru</a>
+                            </p>
+                            <div class="social">
+                                <ul class="social__list">
+                                    <li class="social__item">
+                                        <a href="http://vk.com/skalexander" target="_blank">
+                                            <i class="fa fa-vk"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="http://vk.com/skalexander" target="_blank">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section" id="summary">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section__header">
+                    <h2>Резюме</h2>
+                    <p>Мои знания и образование</p>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="summary">
+                    <div class="summary__item">
+                        <h2 class="summary__header">Образование</h2>
+                        <div class="summary__icon">
+                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                        </div>
+                        <div class="info-section">
+                            <h3 class="info-section__header">
+                                Высшее
+                            </h3>
+                            <p class="info-section__text">
+                                Петрозаводский государственный университет(ПетрГУ),
+                                январь 2015, физико-технический факультет(ФТФ)
+                                , специальность «Автоматизированные системы обработки
+                                информации и управления»(«АСОИУ»).
+                                Квалификация – специалист.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="summary__item">
+                        <h2 class="summary__header">Образование</h2>
+                        <div class="summary__icon">
+                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                        </div>
+                        <div class="info-section">
+                            <h3 class="info-section__header">
+                                Высшее
+                            </h3>
+                            <p class="info-section__text">
+                                Петрозаводский государственный университет(ПетрГУ),
+                                январь 2015, физико-технический факультет(ФТФ)
+                                , специальность «Автоматизированные системы обработки
+                                информации и управления»(«АСОИУ»).
+                                Квалификация – специалист.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @@include('_html_inc/page_bottom.html')
 
 </body>

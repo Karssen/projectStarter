@@ -1,0 +1,126 @@
+@import '../variables.less';
+
+.menu{
+
+  &__nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:60px;
+    z-index: 99;
+    transition: all 0.4s;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(154, 183, 215, 0.95);
+  }
+
+  &__list{
+    padding:0;
+    list-style: none;
+    width:100%;
+    text-align: center;
+    margin-left: 100px;
+    visibility: hidden;
+  }
+
+  &__link{
+    display:block;
+    color:#fff;
+    font-size: @font-size--large;
+    text-transform: uppercase;
+    padding:@spacer * 4 0;
+
+    &:hover{
+      color:#fff;
+      text-decoration: none;
+      background-color: rgba(154, 183, 215, 0.85);
+    }
+  }
+
+  &__toggle{
+    position:fixed;
+    top:0;
+    right:15px;
+    .menu-circle();
+  }
+
+}
+
+.page-start{
+  .menu-circle();
+  position:fixed;
+  top:0;
+  left:15px;
+
+  &__link{
+    color:#000;
+    font-size:40px;
+
+    &:hover,&:focus{
+      color:#000;
+    }
+    i{
+      margin:10px 0 0 12px;
+    }
+  }
+}
+
+.sandwich{
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  background-color:black;
+  margin:10px 0 0 10px;
+  cursor:pointer;
+  padding:10px 0 0 5px;
+
+  &__top,&__middle,&__bottom{
+    display:block;
+    width:30px;
+    height:3px;
+    opacity: 1;
+    background-color:#fff;
+    margin-bottom:5px;
+    transition: all 0.4s;
+  }
+}
+
+#menu-button{
+  display:none;
+}
+//#menu-button:checked ~ .menu__toggle{
+//right:220px;
+//}
+#menu-button:checked ~ .menu__toggle .sandwich__middle{
+  opacity:0;
+}
+#menu-button:checked ~ .menu__toggle .sandwich__top{
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transform-origin: 0 0;
+  margin-left:6px;
+  margin-top:-2px;
+}
+#menu-button:checked ~ .menu__toggle .sandwich__bottom{
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transform-origin: 0 0;
+  margin-top:10px;
+  margin-left:4px;
+}
+#menu-button:checked ~ .menu__nav{
+  height: 100vh;
+
+}
+#menu-button:checked ~ .menu__nav .menu__list{
+  margin-left:0;
+  visibility: visible;
+}

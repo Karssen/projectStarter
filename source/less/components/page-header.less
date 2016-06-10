@@ -10,8 +10,13 @@
   height: 100vh;
   position: relative;
 }
+.page-wrapper{
+  height:100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+}
 
 .intro{
+  margin-top:@spacer * 4;
 
   &__header{
     display:flex;
@@ -31,15 +36,33 @@
 
     &-img{}
   }
-  &__slogan{}
+  &__slogan{
+    text-transform: uppercase;
+    font-size: @font-size--large;
+
+    & p{
+      margin:0;
+    }
+  }
 }
 
 
 .person{
+  text-transform: uppercase;
   display:flex;
-  flex-direction: column;
   justify-content: center;
-  height: 100vh;
+
+
+  &__name{
+    letter-spacing: @spacer/10;
+    border:2px solid #fff;
+    padding:@spacer * 2 @spacer * 6;
+    font-size: @font-size--h1;
+  }
+
+  &__inner{
+    padding:@spacer * 2;
+  }
 
   &__outer{
     display: table;
@@ -57,7 +80,8 @@
       display: table-cell;
       text-align: center;
       vertical-align: middle;
+      min-height: 600px;
     }
   }
-
 }
+
